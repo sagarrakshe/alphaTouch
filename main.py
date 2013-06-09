@@ -22,10 +22,12 @@ import commands
 import time
 import subprocess
 import os
-from pudb import set_trace
 
-
-Lines=[]
+#Global variables
+Left = 0
+Right = 0
+Top = 0
+Bottom = 0
 
 dots = [(1300, 900), (2400, 900), (3500, 900), (4600, 900), (5700, 900),
 		(1300, 1825), (2400, 1825), (3500, 1825), (4600, 1825), (5700, 1825),
@@ -95,8 +97,41 @@ applications ={
 				'^':'Wi-Fi'
 				}
 
+#Read from the configuration file.
+def createDots():
+	Dot=[]
+	xDelta = 0
+	yDelta = 0
+
+	dotFile = open("CONFIGURATION","r")
+	dotContent = dotFile.readlines()
+	dotFile.close()
+
+	Left = int(dotContent[0].strip('\n').split(' ')[1])
+	Right = int(dotContent[1].strip('\n').split(' ')[1])
+	Top = int(dotContent[2].strip('\n').split(' ')[1])
+	Bottom = int(dotContent[3].strip('\n').split(' ')[1])
+
+	print Left, Right, Top, Bottom
+
+	xDelta = (Right-Left)/4
+	yDelta = (Bottom-Top)/4
+
+	print xDelta, yDelta
+
+	x=Left; y=Top
+	for i in range(5):
+		for j in range(5):
+			Dot.append((x,y))
+			x += xDelta
+		y += yDelta
+		x = Left
+	print Dot
+
+
+	exit(0)
+
 def isPresent(point):
-	
 	for i in range(0,len(dots)):
 		if ((dots[i][0]-point[0])**2 + (dots[i][1]-point[1])**2 - 500**2) <0:
 			return i+1
@@ -122,6 +157,9 @@ def pattern(points):
 	print 'More work needed!'
 
 def main():
+	
+	createDots()
+
 	command = 'timeout 8 synclient -m 100 > .pattern '
 	commands.getoutput(command)
 	file = open('.pattern','r')
@@ -138,6 +176,7 @@ def main():
 			elif (len(temp) > 0):
 				Lines.append(temp)
 				temp=[]
+				
 	pattern(Lines)
 
 	file.close()
