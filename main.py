@@ -2,11 +2,11 @@
 
 '''
 /* Copyright (c) 2013, Sagar Rakshe <sagarrakshe2@gmail.com>  
-** 
+**
 ** Permission to use, copy, modify, and/or distribute this software for  
 ** any purpose with or without fee is hereby granted, provided that the  
 ** above copyright notice and this permission notice appear in all copies.  
-**  
+**
 ** THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL  
 ** WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED  
 ** WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR  
@@ -29,6 +29,8 @@ Right = 0
 Top = 0
 Bottom = 0
 
+Dot=[]
+
 dots = [(1300, 900), (2400, 900), (3500, 900), (4600, 900), (5700, 900),
 		(1300, 1825), (2400, 1825), (3500, 1825), (4600, 1825), (5700, 1825),
 		(1300, 2900), (2400, 2900), (3500, 2900), (4600, 2900), (5700, 2900),
@@ -49,7 +51,7 @@ patterns = [
 			[[[3, 8, 13, 18, 23], [5, 9, 13], [13, 19, 25]], 3, 'K'],
 			[[[3, 8, 13, 18, 23], [23, 24, 25]], 2, 'L'],
 			[[[1, 6, 11, 16, 21], [1, 7, 13], [5, 9, 13], [5, 10, 15, 20, 25]], 4, 'M'],
-			[[], 4, 'N'],
+			[[[1, 6, 11, 16, 21], [1, 2, 7, 13, 19, 25], [5, 10, 15, 20, 25]], 4, 'N'],
 			[[[3, 2, 7, 12, 17, 22, 23, 24, 19, 14, 9, 4]], 1, 'O'],
 			[[[3, 8, 13, 18, 23], [3, 4, 5, 10, 15, 14, 13]], 2, 'P'],
 			[[[2, 7, 12, 17, 18, 19, 14, 9, 4, 3], [13, 19, 25]], 2, 'Q'],
@@ -57,13 +59,13 @@ patterns = [
 			[[[4, 3, 2, 7, 12, 13, 14, 19, 24, 23, 22]], 1, 'S'],
 			[[[2, 3, 4], [3, 8, 13, 18, 23]], 2, 'T'],
 			[[[2, 7, 12, 17, 22], [22, 23, 24], [4, 9, 14, 19, 24]], 3, 'U'],
-			[[[2, 7, 18, 23], [4, 9, 19, 23]], 2, 'V'],
+			[[[1, 7, 12, 17, 23], [5, 9, 14, 18, 23]], 2, 'V'],
 			[[[1, 6, 11, 16, 21], [21, 17, 13], [13, 19, 25], [5, 10, 15, 20, 25]], 4, 'W'],
 			[[[1, 7, 13, 19, 25], [5, 9, 13, 17, 21]], 2, 'X'],
 			[[[4, 9, 14, 19, 24], [2, 7, 12], [12, 13, 14]], 3, 'Y'],
 			[[[1, 2, 3, 4, 5], [5, 9, 13, 17, 21], [21, 22, 23, 24, 25]], 3, 'Z'],
 			[[[3, 8, 13, 18, 23], [11, 12, 13, 14, 15]], 2, '+'],
-			[[[23], [17, 13, 19], [11, 7, 8, 9, 15]], 3, '^']
+			[[[23], [17, 18, 19], [11, 12, 13, 14, 15]], 3, '^']
 			]
 
 applications ={
@@ -97,9 +99,8 @@ applications ={
 				'^':'Wi-Fi'
 				}
 
-#Read from the configuration file.
+#Read from the configuration file.]
 def createDots():
-	Dot=[]
 	xDelta = 0
 	yDelta = 0
 
@@ -129,11 +130,9 @@ def createDots():
 	print Dot
 
 
-	exit(0)
-
 def isPresent(point):
 	for i in range(0,len(dots)):
-		if ((dots[i][0]-point[0])**2 + (dots[i][1]-point[1])**2 - 500**2) <0:
+		if ((Dot[i][0]-point[0])**2 + (Dot[i][1]-point[1])**2 - 500**2) <0:
 			return i+1
 
 def pattern(points):
@@ -154,7 +153,7 @@ def pattern(points):
 			#commands.getoutput(command)			
 			print applications[patterns[i][2]]
 			exit(0)
-	print 'More work needed!'
+	else: 'More work needed!'
 
 def main():
 	
@@ -180,7 +179,7 @@ def main():
 	pattern(Lines)
 
 	file.close()
-	os.remove('.pattern')
+	os.remove("./.pattern")
 
 if __name__=='__main__':
 	main()
