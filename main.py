@@ -20,7 +20,7 @@
 
 import commands
 import time
-import subprocess
+import subprocess, shlex
 import os
 
 #Global variables
@@ -29,14 +29,19 @@ Right = 0
 Top = 0
 Bottom = 0
 
+timeLimit = 0
+
 Dot=[]
 
+
+'''
 dots = [(1300, 900), (2400, 900), (3500, 900), (4600, 900), (5700, 900),
 		(1300, 1825), (2400, 1825), (3500, 1825), (4600, 1825), (5700, 1825),
 		(1300, 2900), (2400, 2900), (3500, 2900), (4600, 2900), (5700, 2900),
 		(1300, 3975), (2400, 3975), (3500, 3975), (4600, 3975), (5700, 3975),
 		(1300, 5000), (2400, 5000), (3500, 5000), (4600, 5000), (5700, 5000)]
 
+'''
 patterns = [
 			[[[2, 7, 12, 17, 22], [2, 3, 4], [4, 9, 14, 19, 24], [12, 13, 14]], 4, 'A'],
 			[[[3, 8, 13, 18, 23], [3, 4, 5, 10, 15, 14, 13], [13, 14, 15, 20, 25, 24, 23]], 3, 'B'],
@@ -51,7 +56,7 @@ patterns = [
 			[[[3, 8, 13, 18, 23], [5, 9, 13], [13, 19, 25]], 3, 'K'],
 			[[[3, 8, 13, 18, 23], [23, 24, 25]], 2, 'L'],
 			[[[1, 6, 11, 16, 21], [1, 7, 13], [5, 9, 13], [5, 10, 15, 20, 25]], 4, 'M'],
-			[[[1, 6, 11, 16, 21], [1, 2, 7, 13, 19, 25], [5, 10, 15, 20, 25]], 4, 'N'],
+			[[[1, 6, 11, 16, 21], [1, 7, 13, 19, 25], [5, 10, 15, 20, 25]], 4, 'N'],
 			[[[3, 2, 7, 12, 17, 22, 23, 24, 19, 14, 9, 4]], 1, 'O'],
 			[[[3, 8, 13, 18, 23], [3, 4, 5, 10, 15, 14, 13]], 2, 'P'],
 			[[[2, 7, 12, 17, 18, 19, 14, 9, 4, 3], [13, 19, 25]], 2, 'Q'],
@@ -96,13 +101,16 @@ applications ={
 				'X':'xterm',
 				'Y':'yum',
 				'Z':'zsh',
+				
 				'+':'Calculator',
 				'^':'Wi-Fi',
 				'0':'reboot'
 				}
 
-#Read from the configuration file.]
-def createDots():
+#Read from the configuration file.
+def createGrid():
+	global timeLimit
+
 	xDelta = 0
 	yDelta = 0
 
@@ -115,12 +123,14 @@ def createDots():
 	Top = int(dotContent[2].strip('\n').split(' ')[1])
 	Bottom = int(dotContent[3].strip('\n').split(' ')[1])
 
-	print Left, Right, Top, Bottom
+	timeLimit = dotContent.pop().strip().split(':')[1]
+
+	#print Left, Right, Top, Bottom
 
 	xDelta = (Right-Left)/4
 	yDelta = (Bottom-Top)/4
 
-	print xDelta, yDelta
+	#print xDelta, yDelta
 
 	x=Left; y=Top
 	for i in range(5):
@@ -129,11 +139,10 @@ def createDots():
 			x += xDelta
 		y += yDelta
 		x = Left
-	print Dot
-
+	#print Dot
 
 def isPresent(point):
-	for i in range(0,len(dots)):
+	for i in range(0,len(Dot)):
 		if ((Dot[i][0]-point[0])**2 + (Dot[i][1]-point[1])**2 - 500**2) <0:
 			return i+1
 
@@ -151,18 +160,18 @@ def pattern(points):
 
 	for i in range(len(patterns)):
 		if numbers == patterns[i][0]:
-			#command = applications[patterns[i][2]]
-			#commands.getoutput(command)			
+			
 			print applications[patterns[i][2]]
-			exit(0)
-	else: 'More work needed!'
 
 def main():
-	
-	createDots()
+	global timeLimit
 
-	command = 'timeout 8 synclient -m 100 > .pattern '
-	commands.getoutput(command)
+	createGrid()
+
+	#print timeLimit
+	command = 'timeout ' + timeLimit +' synclient -m 100 > .pattern'
+	subprocess.call(command, shell=True)
+
 	file = open('.pattern','r')
 	lines = file.readlines()
 	
