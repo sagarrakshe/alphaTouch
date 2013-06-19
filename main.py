@@ -108,7 +108,9 @@ def pattern(points):
 
 	for i in range(len(patterns)):
 		if numbers == patterns[i][0]:
-			print applications[patterns[i][2]]
+			app = applications[patterns[i][2]]
+			print app
+			subprocess.Popen([app])
 	
 def main():
 	global timeLimit
