@@ -23,14 +23,14 @@ For 'Debian' users, edit file:
 
 Paste this into the document:
 
-`
-Section "InputClass"
-        Identifier "enable synaptics SHMConfig"
-        MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
-        Option "SHMConfig" "on"
-EndSection
-`
+
+    Section "InputClass"
+    Identifier "enable synaptics SHMConfig"
+    MatchIsTouchpad "on"
+    MatchDevicePath "/dev/input/event*"
+    Option "SHMConfig" "on"
+    EndSection
+
 (Here's my  [file](http://paste.ubuntu.com/5747634/) for reference.)
 
 You need to reboot machine in order to take place the effect. 
