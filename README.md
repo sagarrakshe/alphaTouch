@@ -8,17 +8,21 @@ It uses [synclient](https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Sync
 ## Installation
 
 Clone the repo:
-    git clone https://github.com/sagarrakshe/alphaTouch.git
+    
+    $ git clone https://github.com/sagarrakshe/alphaTouch.git
 
 Run `install.sh`:
+    
     $ ./install.sh
 
 Inorder to use `synclient` you will need to Enable `SHMConfig` (Shared Memory) option. 
 
 For `Ubuntu` users, edit file:
-    /usr/s^Cre/X11/xorg.conf.d/50-synaptics.conf
+   
+    /usr/share/X11/xorg.conf.d/50-synaptics.conf
 
 For `Debian` users, edit file:
+   
     /etc/X11/xorg.conf.d/50-synaptics.conf
 
 Paste this into the document:
