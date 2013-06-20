@@ -8,18 +8,18 @@ It uses [synclient](https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Sync
 ## Installation
 
 Clone the repo:
-`git clone https://github.com/sagarrakshe/alphaTouch.git`
+    git clone https://github.com/sagarrakshe/alphaTouch.git
 
 Run `install.sh`:
-`$ ./install.sh`
+    $ ./install.sh
 
 Inorder to use `synclient` you will need to Enable `SHMConfig` (Shared Memory) option. 
 
 For `Ubuntu` users, edit file:
-`/usr/s^Cre/X11/xorg.conf.d/50-synaptics.conf`
+    /usr/s^Cre/X11/xorg.conf.d/50-synaptics.conf
 
 For `Debian` users, edit file:
-`/etc/X11/xorg.conf.d/50-synaptics.conf`
+    /etc/X11/xorg.conf.d/50-synaptics.conf
 
 Paste this into the document:
 
@@ -33,4 +33,4 @@ Paste this into the document:
 
 (Here's my  [file](http://paste.ubuntu.com/5747634/) for reference.)
 
-You need to reboot machine in order to take place the effect. 
+You need to reboot your machine in order to take place the effect. 
