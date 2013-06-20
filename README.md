@@ -18,7 +18,7 @@ Inorder to use `synclient` you will need to Enable `SHMConfig` (Shared Memory) o
 For `Ubuntu` users, edit file:
 `/usr/s^Cre/X11/xorg.conf.d/50-synaptics.conf`
 
-For 'Debian' users, edit file:
+For `Debian` users, edit file:
 `/etc/X11/xorg.conf.d/50-synaptics.conf`
 
 Paste this into the document:
