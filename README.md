@@ -16,6 +16,7 @@ Run `install.sh`:
     $ ./install.sh
 
 Inorder to use `synclient` you will need to Enable `SHMConfig` (Shared Memory) option. 
+
 For `Ubuntu` users, edit file:
    
     /usr/share/X11/xorg.conf.d/50-synaptics.conf
@@ -24,14 +25,14 @@ For `Debian` users, edit file:
    
     /etc/X11/xorg.conf.d/50-synaptics.conf
 
-Add the *bold* line into the document:
+Add the **bold** line into the document:
 
 
     Section "InputClass"
     Identifier "enable synaptics SHMConfig"
     MatchIsTouchpad "on"
     MatchDevicePath "/dev/input/event*"
-    *Option "SHMConfig" "on"*
+    **Option "SHMConfig" "on"**
     EndSection
 
 (Here's my  [file](http://paste.ubuntu.com/5747634/) for reference.)
