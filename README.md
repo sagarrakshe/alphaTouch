@@ -54,15 +54,18 @@ You can configure as many times you need it or you can manually edit the `CONFIG
 The program forms a grid on touch-pad as shown below. 
 Each intersection is numbered from 1 to 25. A pattern is defined by the order of this numbers.
 
-![touch-pad image](https://github.com/sagarrakshe/alphaTouch/blob/master/_assets/touch-pad.png)
+![touch-pad image](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/touch-pad.png)
 
 Files:
 
-    CONFIGURATION - This file contains the co-ordinates of the **four corners** of your touch-pad and the **time-limit** to draw the pattern. 
+`CONFIGURATION` - 
+    This file contains the co-ordinates of the **four corners** of your touch-pad and the **time-limit** to draw the pattern. 
 
-    mapPattern -    This file contain the records of pattern and the corresponding alphabet. For    example consider this record, `[[[3, 8, 13, 18, 23], [3, 4, 5], [13, 14]], 3, 'F']`.The first arguemnt(list) denotes the pattern, the second one denotes the no. of lines(3) in the pattern and the last one denotes the corresponding alphabet(F).
+`mapPattern` - 
+    This file contain the records of pattern and the corresponding alphabet. For    example consider this record, `[[[3, 8, 13, 18, 23], [3, 4, 5], [13, 14]], 3, 'F']`.The first arguemnt(list) denotes the pattern, the second one denotes the no. of lines(3) in the pattern and the last one denotes the corresponding alphabet(F).
 
-    applications -  This file contains the list applications corresponding to the particular alphabet
+`applications` - 
+    This file contains the list applications corresponding to the particular alphabet
     . For example, `'F':'firefox'` on identifying letter 'F', 'firefox' applications will be opened. Edit this file to your own fit. 
 
 The `time-limit` to draw pattern is by default 8 seconds. You can set it in the `CONFIGURATION` file.
