@@ -54,7 +54,7 @@ You can configure as many times you need it or you can manually edit the `CONFIG
 The program forms a grid on touch-pad as shown below. 
 Each intersection is numbered from 1 to 25. A pattern is defined by the order of this numbers.
 
-![touch-pad image](https://raw.github.com/sagarrakshe/alphaTouch/_assets/touch-pad.png)
+![touch-pad image](https://github.com/sagarrakshe/alphaTouch/blob/master/_assets/touch-pad.png)
 
 Files:
 
