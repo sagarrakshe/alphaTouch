@@ -1,15 +1,3 @@
-`
- __________    __ 		  __________
-|	____   |  |  |		 |	 ____   \
-|  |	|  |  |  |		 |	|    |  |
-|  |	|  |  |  | 		 |  |	 |  |
-|  |____|  |  |  |       |  |____|  |
-|	____   |  |  |		 |   _______/
-|  |	|  |  |  |		 |  |
-|  |	|  |  |  |_____  |  |
-|__|	|__|  |________| |__|
-
-`
 
 ## Introduction
 
@@ -52,4 +40,11 @@ Add the **SHMConfig** option into the document as shown below:
 
 You need to reboot your machine in order to take place the effect. 
 
-## Usage
+## Configuration
+
+To configure your touch-pad for this utility, run `config.py`
+
+    $ python config.py
+
+Follow the instructions and after succesful execution you will get a file - `CONFIGURATION`
+This file contains the co-ordinates of the four corners of your touch-pad and the time-limit to draw the pattern. You can configure as many times you need it or you can manually edit the `CONFIGURATION` file provided it's protocol is followed.
