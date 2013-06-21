@@ -70,11 +70,18 @@ Files:
 
 The `time-limit` to draw pattern is by default 8 seconds. You can set it in the `CONFIGURATION` file.
 
+Lift your hand after a **straight** line and a **curve**. As shown below.
+
+![straight line](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/straight.png)
+![curve line](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/C.png)
+
 Run `main.py`:
 
     `$ python main.py`
 
 Let say you want to open **firefox**. Imagine the 5X5 grid on your touch-pad and draw the pattern as follows. After drawing one line lift your hand and then draw the second line. 
+
+![F image](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/F.png)
 
 
 ## Comments, Suggestion
