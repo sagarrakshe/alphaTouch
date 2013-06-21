@@ -56,7 +56,7 @@ Each intersection is numbered from 1 to 25. A pattern is defined by the order of
 
 ![touch-pad image](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/touch-pad.png)
 
-Files:
+**Files**:
 
 `CONFIGURATION` - 
     This file contains the co-ordinates of the **four corners** of your touch-pad and the **time-limit** to draw the pattern. 
@@ -75,14 +75,15 @@ Lift your hand after a **straight** line and a **curve**. As shown below.
 ![straight line](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/straight.png)
 ![curve line](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/C.png)
 
+Let say you want to open **firefox**. 
+
 Run `main.py`:
 
     `$ python main.py`
 
-Let say you want to open **firefox**. Imagine the 5X5 grid on your touch-pad and draw the pattern as follows. After drawing one line lift your hand and then draw the second line. 
+Imagine the 5X5 grid on your touch-pad and draw the pattern as follows. After drawing one line lift your hand and then draw the second line. If the total order of the numbers matches exactly with the one in the `mapPattern` file then **firefox** will open!
 
 ![F image](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/F.png)
-
 
 ## Comments, Suggestion
 
