@@ -1,7 +1,7 @@
 
 ## Introduction
 
-`alphaTouch` is a smarter way to launch the applications based on the patterns drawn on the touch-pad. Currently it identifies all alphabets. (You can see in the `applications` file to the patterns it identifies)
+Isn't it cool to open calculator by drawing '+' sign on the touch-pad? or Reboot your machine by drawing 'O' and Shutdown by drawing 'X' on touch-pad? `alphaTouch` is a smarter way to execute the applications or programs based on the patterns drawn on the touch-pad. Currently it identifies all alphabets. (You can see in the `applications` file for the patterns it identifies.)
 
 
 It uses [synclient](https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Synclient) utility to get the information from the touch-pad.
@@ -53,6 +53,8 @@ You can configure as many times you need it or you can manually edit the `CONFIG
 
 The program forms a grid on touch-pad as shown below. 
 Each intersection is numbered from 1 to 25. A pattern is defined by the order of this numbers.
+
+![touch-pad image](https://raw.github.com/sagarrakshe/alphaTouch/_assets/touch-pad.png)
 
 Files:
 
