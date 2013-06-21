@@ -1,3 +1,16 @@
+`
+ __________    __ 		  __________
+|	____   |  |  |		 |	 ____   \
+|  |	|  |  |  |		 |	|    |  |
+|  |	|  |  |  | 		 |  |	 |  |
+|  |____|  |  |  |       |  |____|  |
+|	____   |  |  |		 |   _______/
+|  |	|  |  |  |		 |  |
+|  |	|  |  |  |_____  |  |
+|__|	|__|  |________| |__|
+
+`
+
 ## Introduction
 
 `alphaTouch` is a smarter way to launch the applications based on the patterns drawn on the touch-pad. Currently it identifies all alphabets. (You can see in the `applications` file to the patterns it identifies)
@@ -38,3 +51,5 @@ Paste this into the document:
 (Here's my  [file](http://paste.ubuntu.com/5747634/) for reference.)
 
 You need to reboot your machine in order to take place the effect. 
+
+## Usage
