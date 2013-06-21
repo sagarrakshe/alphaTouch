@@ -38,7 +38,7 @@ For `Debian` users, edit file:
    
     /etc/X11/xorg.conf.d/50-synaptics.conf
 
-Paste this into the document:
+Add the **SHMConfig** option into the document as shown below:
 
 
     Section "InputClass"
