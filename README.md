@@ -84,6 +84,10 @@ Imagine the 5X5 grid on your touch-pad and draw the pattern as follows. After dr
 
 ![F image](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/F.png)
 
+## Contribute 
+
+To conribute to `alphaTouch` start forking the project and send the pull requests. Here is the [issue list](https://github.com/sagarrakshe/alphaTouch/issues).
+
 ## Comments, Suggestion
 
 If you have any suggestions or some problem regarding `alphaTouch` feel free to ping me at `sagarrakshe2@gmail.com`
