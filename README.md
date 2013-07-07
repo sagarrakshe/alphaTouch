@@ -1,11 +1,11 @@
-## Introduction
+## What is alphaTouch?
 
 Isn't it cool to open calculator by drawing '+' sign on the touch-pad? or Reboot your machine by drawing 'O' and Shutdown by drawing 'X' on touch-pad? `alphaTouch` is a smarter way to execute the applications or programs based on the patterns drawn on the touch-pad. Currently it identifies all alphabets. (You can see in the `applications` file for the patterns it identifies.)
 
 
 It uses [synclient](https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Synclient) utility to get the information from the touch-pad.
 
-## Installation
+## How to Install?
 
 Clone the repo:
     
@@ -39,7 +39,7 @@ Add the **SHMConfig** option into the document as shown below:
 
 You need to reboot your machine in order to take place the effect. 
 
-## Configuration
+## Configure touchpad.
 
 To configure your touch-pad for this utility, run `config.py`
 
@@ -48,7 +48,7 @@ To configure your touch-pad for this utility, run `config.py`
 Follow the instructions and after succesful execution you will get a file - `CONFIGURATION`.
 You can configure as many times you need it or you can manually edit the `CONFIGURATION` file provided it's protocol is followed.
 
-##Usage
+## In Action!
 
 The program forms a grid on touch-pad as shown below. 
 Each intersection is numbered from 1 to 25. A pattern is defined by the order of this numbers.
@@ -84,7 +84,7 @@ Imagine the 5X5 grid on your touch-pad and draw the pattern as follows. After dr
 
 ![F image](https://raw.github.com/sagarrakshe/alphaTouch/master/_assets/F.png)
 
-## Contribute 
+## Want to Contribute?
 
 To conribute to `alphaTouch` start forking the project and send the pull requests. Here is the [issue list](https://github.com/sagarrakshe/alphaTouch/issues).
 
