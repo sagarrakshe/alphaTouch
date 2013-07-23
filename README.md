@@ -1,12 +1,3 @@
-`
-       _       _          _____                _     
-  __ _| |_ __ | |__   __ |_   _|__  _   _  ___| |__  
- / _` | | '_ \| '_ \ / _` || |/ _ \| | | |/ __| '_ \ 
-| (_| | | |_) | | | | (_| || | (_) | |_| | (__| | | |
- \__,_|_| .__/|_| |_|\__,_||_|\___/ \__,_|\___|_| |_|
-        |_|                                          
-
-`
 ## What is alphaTouch?
 
 Isn't it cool to open calculator by drawing '+' sign on the touch-pad? or Reboot your machine by drawing 'O' and Shutdown by drawing 'X' on touch-pad? `alphaTouch` is a smarter way to execute the applications or programs based on the patterns drawn on the touch-pad. Currently it identifies all alphabets. (You can see in the `applications` file for the patterns it identifies.)
